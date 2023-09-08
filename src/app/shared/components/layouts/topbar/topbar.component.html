@@ -1,0 +1,38 @@
+<div
+  class="fixed top-0 left-0 w-full h-20 z-50 bg-gray-100 shadow-md flex items-center px-8"
+>
+  <a
+    routerLink=""
+    class="flex items-center justify-center text-gray-900 text-lg font-medium w-64 rounded-lg"
+  >
+    <img
+      class="h-10 mr-2 rounded-full"
+      src="assets/layout/images/{{
+        layoutService.config.colorScheme === 'light'
+          ? 'logo-dark'
+          : 'logo-white'
+      }}.png"
+      alt="logo"
+    />
+    <span>CECY</span>
+  </a>
+
+  <button
+    #menubutton
+    class="inline-flex justify-center items-center relative text-gray-500 bg-transparent rounded-full w-12 h-12 cursor-pointer transition-colors duration-200 hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+    (click)="layoutService.onMenuToggle()"
+  >
+    <i style="font-size: 1.2rem" class="pi pi-bars"></i>
+  </button>
+  <div class="flex ml-auto">
+    <app-notification
+      *ngIf="user?.role?.name === 'coordinator_cecy'"
+      class="flex items-center justify-center"
+    ></app-notification>
+    <app-notification
+      *ngIf="user?.role?.name === 'coordinator_career'"
+      class="flex items-center justify-center"
+    ></app-notification>
+    <app-dropdown></app-dropdown>
+  </div>
+</div>

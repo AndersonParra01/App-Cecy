@@ -1,0 +1,42 @@
+<nav
+  class="fixed top-0 left-0 right-0 z-10 flex items-center mb-5 p-4 bg-white shadow-md"
+>
+  <div class="flex items-center">
+    <img
+      src="assets/layout/images/logo-dark.png"
+      alt="Logo"
+      class="w-10 h-10 mr-2"
+    />
+    <span class="font-semibold"><a routerLink="">CECY</a></span>
+  </div>
+  <div class="ml-8 inline-block hover:text-black font-medium text-lg py-2 px-4">
+    <a [routerLink]="['']">Inicio</a>
+  </div>
+  <div class="ml-auto">
+    <ul class="flex space-x-4 items-center">
+      <li
+        class="inline-block hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2"
+      >
+        <a (click)="viewCourses()" class="cursor-pointer">Cursos</a>
+      </li>
+      <li
+        class="inline-block hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2"
+      >
+        <a [routerLink]="['mis-cursos']"> Mi Aprendizaje</a>
+      </li>
+      <li>
+        <p-menu #menu [model]="items" [popup]="true"> </p-menu>
+        <p-button
+          (click)="menu.toggle($event)"
+          label="{{ student?.nombres }}"
+          styleClass="mr-2"
+          size="large"
+          [style]="{ 'background-color': '#2196F3', color: '#ffffff' }"
+        ></p-button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="my-20 h-screen">
+  <router-outlet></router-outlet>
+</div>

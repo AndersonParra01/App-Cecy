@@ -1,0 +1,57 @@
+<div class="flex justify-center items-center">
+  <p-card class="w-full">
+    <h2 class="text-xl text-center">
+      <i class="fa-sharp fa-solid fa-check-to-slot fa-xl"></i>
+      <strong class="ml-1">Mis planificaciones</strong>
+    </h2>
+  </p-card>
+</div>
+<p-toolbar>
+  <div class="p-toolbar-group-left">
+    <button pButton pRipple type="button" label="Refrescar" class="p-button-rounded ml-2 p-button-success"
+      icon="pi pi-sync" (click)="planificationsAsign()"></button>
+
+  </div>
+  <div class="p-toolbar-group-right">
+    <div class="p-inputgroup">
+      <input id="namePlan" pInputText #inputSearch [(ngModel)]="namePlan" placeholder="Buscar curso asignado"
+        (keyup)="filterPlanification(namePlan)" />
+
+      <button pButton pRipple type="button" icon="pi pi-search"></button>
+    </div>
+  </div>
+</p-toolbar>
+<p-toast></p-toast>
+
+<!-- <p-card *ngIf="allCourses.length == 0" class="m-auto w-full text-center">
+  <h2>No tienes cursos asignados</h2>
+</p-card> -->
+
+<div *ngIf="loading" class="text-center flex items-center justify-center">
+  <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+</div>
+<div class="flex flex-wrap gap-4 mt-2 mb-2">
+  <div *ngFor="let item of filterPlan">
+    <p-card *ngIf="!loading" [header]="item.planification.name" [style]="{ width: '250px' }"
+      subheader="Código del curso: {{ item.planification.codeCourse }}">
+      <ng-template pTemplate="header">
+        <img class="object-contain h-32 bg-slate-100"
+          onerror='this.src = "https://primefaces.org/cdn/primeng/images/usercard.png" ' [src]="item?.image" alt=""
+          style="height: 1 rem" />
+
+      </ng-template>
+      <p>
+        Estado: <span><p-tag [severity]="item.state === 'terminado' ? 'warning' : 'success'"
+            value="{{ item.state }}"></p-tag></span> <br />
+        <span class="text-sm text-slate-400">Desde {{ item.planification.startDate | date:'YYY-MM-dd' }} hasta {{ item.planification.finishDate | date:'YYY-MM-dd' }}</span>
+      </p>
+      <ng-template pTemplate="footer">
+        <div class="text-center">
+          <p-splitButton label="Editar" styleClass="p-button-primary" icon="pi pi-user-edit"
+            (onDropdownClick)="select(item)" (onClick)="editCourse(item)" [model]="items">
+          </p-splitButton>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

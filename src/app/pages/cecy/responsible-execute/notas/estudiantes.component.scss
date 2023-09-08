@@ -1,0 +1,146 @@
+/* body {
+    margin-top: 0%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+#titulo{
+    padding-bottom: 2%;
+}
+
+#nota {
+    width: 11%;
+    border: 0;
+    outline: none;
+}
+#nota:focus{
+    border-color:#0079ff;
+}
+
+#excel {
+    background-color: #ffffff;
+    color: #008739;
+    border-color:#008739 ;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+    #excel:hover {
+        background-color: #008739;
+        color: #ffffff;
+        border-color: #ffffff;
+    }
+
+
+
+#asistencia {
+    background-color: #36d399;
+    color:  #ffffff;
+    border:none;
+}
+ */
+
+#search{
+    margin-left: 2%;
+    width: 200px;
+}
+
+#table{
+    margin-left:2%;
+    margin-right:5%;
+}
+
+#buscar1{
+    background-color:  #ffffff;
+    color: #9faabe;
+    border: none;
+    padding-left: 2%;
+}
+
+#buscar{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    border: none;
+}
+
+#nav{
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+ #volver {
+    margin-right: 1%;
+    margin-left: 2%;
+    background-color: #ffffff;
+    color: #00b2df;
+    border-color:#00b2df ;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+    #volver:hover {
+        background-color: #00b2df;
+        color: #ffffff;
+        border-color: #ffffff;
+    }
+    
+
+#excel {
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: #ffffff;
+    color: #008739;
+    border-color:#008739 ;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+    #excel:hover {
+        background-color: #008739;
+        color: #ffffff;
+        border-color: #ffffff;
+    }
+
+#asistencia1 {
+    background-color: #ffffff;
+    color:  #787779;
+    white-space: nowrap;
+    border-color:#787779 ;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+    #asistencia1:hover {
+        background-color: #787779;
+        color: #ffffff;
+        border-color: #ffffff;
+    }
+
+.dialog-content {
+    padding: 15px;
+    font-size: 14px;
+    width: 100%;
+}
+
+
+.eva-link {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.assistance-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.assistance-list li {
+    margin-bottom: 5px;
+}
+
+.assistance-symbol {
+    color: white;
+    background-color: #048eff;;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
